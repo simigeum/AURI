@@ -1,0 +1,92 @@
+.gnb {
+  position: fixed;
+  width: 100%;
+  padding: 0 52px;
+
+  &-wrapper {
+    @include flexbox(between);
+    height: 86px;
+  }
+
+  &-nav {
+    flex-grow: 1;
+
+    .gnb-nav-list {
+      @include flexbox(center, end);
+
+      .gnb-nav-item {
+        width: 200px;
+        height: 28px;
+
+        > a {
+          display: inline-block;
+          height: 28px;
+          padding: 0 20px;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 28px;
+          color: #0b0b0b;
+        }
+      }
+
+      .submenu {
+        visibility: hidden;
+      }
+    }
+  }
+
+  &-group {
+    @include flexbox(start);
+
+    .lang {
+      li {
+        @include flexbox(start);
+      }
+
+      a:first-child {
+        color: #e61c22;
+      }
+
+      a:first-child::after {
+        position: absolute;
+        top: 0.2rem;
+        right: 0;
+        display: inline-block;
+        width: 0.2rem;
+        height: 1.6rem;
+        background-color: #fff;
+        content: '';
+        opacity: 0.2;
+      }
+
+      a {
+        position: relative;
+        display: block;
+        padding: 0 11px;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.5;
+        color: #fff;
+        text-align: left;
+        transition: all 0.2s;
+      }
+    }
+
+    .control {
+      width: 34px;
+      height: 22px;
+      margin-left: 33px;
+      font-size: 0;
+      line-height: 22px;
+      vertical-align: middle;
+      background-image: url('./assets/images/layout/sitemap.png');
+      background-size: contain;
+    }
+  }
+
+  &-menu {
+    .topmenu_all {
+      visibility: hidden;
+    }
+  }
+}
