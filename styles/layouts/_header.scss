@@ -1,6 +1,6 @@
 .gnb {
   position: fixed;
-  width: 100%;
+  width: 100vw;
   padding: 0 52px;
 
   &-wrapper {
@@ -8,11 +8,45 @@
     height: 86px;
   }
 
+  .logo {
+    a {
+      display: block;
+      margin-top: 10px;
+    }
+  }
+
   &-nav {
     flex-grow: 1;
+    @include flexbox;
+
+    &::after {
+      position: absolute;
+      top: 8.6rem;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: #ddd;
+      content: '';
+      opacity: 0;
+      transition: all 0.2s;
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 8.6rem;
+      background-color: #fff;
+      content: '';
+      transition: all 0.2s;
+    }
 
     .gnb-nav-list {
-      @include flexbox(center, end);
+      @include flexbox(center, center);
+      margin-top: 6px;
+      margin-left: 42px;
 
       .gnb-nav-item {
         width: 200px;
@@ -39,6 +73,8 @@
     @include flexbox(start);
 
     .lang {
+      margin-top: 4px;
+
       li {
         @include flexbox(start);
       }
@@ -49,12 +85,12 @@
 
       a:first-child::after {
         position: absolute;
-        top: 0.2rem;
+        top: 0.7rem;
         right: 0;
         display: inline-block;
         width: 0.2rem;
         height: 1.6rem;
-        background-color: #fff;
+        background-color: #000;
         content: '';
         opacity: 0.2;
       }
@@ -66,7 +102,7 @@
         font-size: 18px;
         font-weight: 500;
         line-height: 1.5;
-        color: #fff;
+        color: #a0a0a0;
         text-align: left;
         transition: all 0.2s;
       }
@@ -75,6 +111,8 @@
     .control {
       width: 34px;
       height: 22px;
+      margin-top: 1px;
+      margin-right: 17px;
       margin-left: 33px;
       font-size: 0;
       line-height: 22px;
