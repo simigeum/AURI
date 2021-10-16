@@ -12,6 +12,11 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div id="wrap">
@@ -114,7 +119,7 @@
         </div>
       </header>
 
-      <main></main>
+      <main id="main"></main>
 
       <footer></footer>
 
@@ -451,5 +456,16 @@
         <a href="#" class="control close">닫기</a>
       </div>
     </div>
+    <script>
+      $(window).on('scroll', function () {
+        if ($(window).scrollTop() > 86) {
+          $('.gnb-nav').addClass('active')
+          $('.gnb-group').addClass('active')
+        } else {
+          $('.gnb-nav').removeClass('active')
+          $('.gnb-group').removeClass('active')
+        }
+      })
+    </script>
   </body>
 </html>
